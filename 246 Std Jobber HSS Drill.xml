@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<omtdx version="34" srcURL="sqlite://O:\Mech &amp; Fluid Systems\Equipment\Fabrication\Mill_CNC_Doosan6500\HyperMILL Files\Tool Database\DVF6500.db" srcGuid="4a03a81b-a90d-4a23-9f7a-383bffba2be4" srcType="standard" files=".246 Std Jobber HSS Drill_files">
+  <formulas>
+    <formula name="fF" type="feedrate">
+      <param name="formula" value="fz*z*n"/>
+      <param name="comment" value="Default feedrate formula."/>
+      <param name="objGuid" value="e2c2464d-112e-4640-a87f-04ea717f807d"/>
+    </formula>
+    <formula name="fFDrill" type="feedrate">
+      <param name="formula" value="f*n"/>
+      <param name="comment" value="Default drilling feedrate formula."/>
+      <param name="objGuid" value="db987c3f-8fc4-4a6f-99e6-c2ca13f77682"/>
+    </formula>
+    <formula name="fFreduced" type="feedrate">
+      <param name="formula" value="fz*z*n*0.7"/>
+      <param name="comment" value="Default formula for reduced feedrate."/>
+      <param name="objGuid" value="5d07afb5-dc35-4ad8-9570-ab60b49a2480"/>
+    </formula>
+    <formula name="fSinch" type="speed">
+      <param name="formula" value="(Vc*12)/(d*pi)"/>
+      <param name="comment" value="Default inch spindle RPM formula."/>
+      <param name="objGuid" value="5b94f435-be6a-459a-a655-292616796a1c"/>
+    </formula>
+  </formulas>
+  <technologyPurposes>
+    <technologyPurpose name="Drilling">
+      <param name="objGuid" value="21dd5b20-7f3d-4de2-8102-c446a8d7d640"/>
+    </technologyPurpose>
+    <technologyPurpose name="High Efficiency Side Milling">
+      <param name="comment" value="machining advisor"/>
+      <param name="objGuid" value="c84a2ef7-d043-4425-9074-a15cf51cbc2b"/>
+    </technologyPurpose>
+  </technologyPurposes>
+  <coolants>
+    <coolant number="1">
+      <param name="comment" value="Flood"/>
+      <param name="type" value="unknown"/>
+      <param name="objGuid" value="a38dac9b-e27b-427e-83c9-a7d5935133e1"/>
+    </coolant>
+  </coolants>
+  <cuttingMaterials>
+    <cuttingMaterial name="HSS">
+      <param name="objGuid" value="4fb7024d-7a4a-4548-aade-670748b9cacd"/>
+      <param name="predefinedObjGuid" value="00000000-0000-0000-0000-000000000000"/>
+    </cuttingMaterial>
+  </cuttingMaterials>
+  <materials>
+    <material type="cuttingClass" name="Wrought aluminium alloys Si &lt; 6%">
+      <param name="objGuid" value="c4ec9816-8cee-4ed2-9784-2ff32c5d7de9"/>
+      <param name="chippingClass" value="alSi"/>
+    </material>
+    <material type="cuttingClass" name="Steel 500 - 850 N/mm²  (Steel up to 24 HRC)">
+      <param name="comment" value="4130"/>
+      <param name="objGuid" value="303a57dd-0b13-4cf9-862e-ac7d2b96ed21"/>
+      <param name="chippingClass" value="steel500to850"/>
+    </material>
+    <material type="cuttingClass" name="Stainless steel ferritic/martensitic">
+      <param name="objGuid" value="ab815f3e-099a-41ae-b805-cbb43497339a"/>
+      <param name="chippingClass" value="stainlessSteelFe"/>
+    </material>
+    <material type="cuttingClass" name="Titanium alloys &gt; 300 HB [Ti6Al4V]">
+      <param name="objGuid" value="110c573b-5cb8-4e09-a136-8884aa090bf0"/>
+      <param name="chippingClass" value="tiAlloysGreater300"/>
+    </material>
+  </materials>
+  <manufacturers>
+    <manufacturer name="LYNDEX-NIKKEN">
+      <param name="objGuid" value="fd8d236d-c585-487a-a554-25ecfd9b116d"/>
+    </manufacturer>
+  </manufacturers>
+  <couplings>
+    <coupling type="isoAdaptor">
+      <param name="hmbState" value="unlinked"/>
+      <param name="objGuid" value="3619846f-bc46-4c91-b46e-983d7cfc4e3f"/>
+      <param name="class" value="CAT 40"/>
+      <param name="isoCode" value="SKG3*C0400$$$$"/>
+      <param name="lengthOfUnit" value="inch"/>
+    </coupling>
+  </couplings>
+  <spindles>
+    <spindle name="DVF6500">
+      <param name="comment" value="CAT40 BIGPLUS"/>
+      <param name="objGuid" value="d1cb9c00-7e7c-48f1-975f-f9e5881d7111"/>
+      <coupling type="isoAdaptor" class="CAT 40"/>
+      <param name="lengthOfUnit" value="inch"/>
+      <geometry name="Spindle_1" active="1" objGuid="b409f06f-4f42-4e5b-953d-b85195d34cb9">
+        <cont2D>
+          <elem2D type="line" sx="0" sy="0" ex="1.968999981880188" ey="0"/>
+          <elem2D type="line" ex="1.968999981880188" ey="0.51200002431869507"/>
+          <elem2D type="line" ex="2.125999927520752" ey="0.51200002431869507"/>
+          <elem2D type="line" ex="2.125999927520752" ey="0.61000001430511475"/>
+          <elem2D type="line" ex="2.7560000419616699" ey="0.61000001430511475"/>
+          <elem2D type="line" ex="2.7560000419616699" ey="1.0429999828338623"/>
+          <elem2D type="line" ex="2.9530000686645508" ey="1.0429999828338623"/>
+          <elem2D type="line" ex="3.1010000705718994" ey="1.2990000247955322"/>
+          <elem2D type="line" ex="3.7030000686645508" ey="4.0159997940063477"/>
+          <elem2D type="line" ex="3.7620000839233398" ey="4.0749998092651367"/>
+          <elem2D type="line" ex="4.054999828338623" ey="4.0749998092651367"/>
+          <elem2D type="line" ex="4.1339998245239258" ey="4.1539998054504395"/>
+          <elem2D type="line" ex="4.1339998245239258" ey="4.2519998550415039"/>
+          <elem2D type="line" ex="4.1729998588562012" ey="4.2519998550415039"/>
+          <elem2D type="line" ex="4.1729998588562012" ey="5.4699997901916504"/>
+          <elem2D type="line" ex="0" ey="5.4699997901916504"/>
+        </cont2D>
+        <mountingPosition location="machineSide">
+          <param name="origin" value="0,5.4699997901916504,0"/>
+          <param name="xAxis" value="1,0,0"/>
+          <param name="yAxis" value="0,0,-1"/>
+          <param name="zAxis" value="0,1,0"/>
+        </mountingPosition>
+        <mountingPosition location="workpieceSide">
+          <param name="origin" value="0,0,0"/>
+          <param name="xAxis" value="1,0,0"/>
+          <param name="yAxis" value="0,0,-1"/>
+          <param name="zAxis" value="0,1,0"/>
+        </mountingPosition>
+      </geometry>
+    </spindle>
+  </spindles>
+  <holders>
+    <holders folder="Drill chucks" objGuid="88c0c1b7-f1e5-4fc7-b265-4a0304da97e9">
+      <holder name="NCAT40-NPU13-105U-IDU">
+        <param name="hmbState" value="unlinked"/>
+        <param name="orderingCode" value="ncat40-npu13-105u-idu"/>
+        <param name="objGuid" value="b840b5e5-4517-4f00-93ee-36471023dba3"/>
+        <param name="manufacturer" value="LYNDEX-NIKKEN"/>
+        <coupling type="isoAdaptor" location="top" class="CAT 40"/>
+        <coupling type="unknown" location="bottom">
+          <param name="objGuid" value="18cfeefe-a814-488c-b42c-fcad3913453a"/>
+        </coupling>
+        <param name="lengthOfUnit" value="inch"/>
+        <param name="spindleSpeedFactor" value="1"/>
+        <param name="feedrateFactor" value="1"/>
+        <param name="cuttingWidthFactor" value="1"/>
+        <param name="cuttingLengthFactor" value="1"/>
+        <param name="maxSpindleSpeed" value="0"/>
+        <param name="maxFeedrate" value="0"/>
+        <param name="coolantThrough" value="unknown"/>
+        <geometry name="NCAT40-NPU13-105U-IDU" active="1" objGuid="5f861110-0fb5-4931-8495-26a009a7689e">
+          <cont2D>
+            <elem2D type="line" sx="0" sy="0" ex="0.25582748651504517" ey="0.00010723204468376935"/>
+            <elem2D type="line" ex="0.42275238037109375" ey="0.47110339999198914"/>
+            <elem2D type="line" ex="0.42348626255989075" ey="0.47207298874855042"/>
+            <elem2D type="line" ex="0.42464503645896912" ey="0.47244095802307129"/>
+            <elem2D type="line" ex="0.64558267593383789" ey="0.47244095802307129"/>
+            <elem2D type="line" ex="0.67053008079528809" ey="0.47647732496261597"/>
+            <elem2D type="line" ex="0.69361060857772827" ey="0.48866903781890869"/>
+            <elem2D type="line" ex="0.71102499961853027" ey="0.50713127851486206"/>
+            <elem2D type="line" ex="0.72168171405792236" ey="0.53004676103591919"/>
+            <elem2D type="line" ex="0.92510360479354858" ey="1.2513264417648315"/>
+            <elem2D type="line" ex="0.92519462108612061" ey="1.4558612108230591"/>
+            <elem2D type="line" ex="0.92578274011611938" ey="1.4572809934616089"/>
+            <elem2D type="line" ex="0.95443975925445557" ey="1.4859380722045898"/>
+            <elem2D type="line" ex="0.95472532510757446" ey="1.5293490886688232"/>
+            <elem2D type="line" ex="0.954345703125" ey="1.5307142734527588"/>
+            <elem2D type="line" ex="0.95472240447998047" ey="1.5320545434951782"/>
+            <elem2D type="line" ex="0.95472240447998047" ey="1.9049534797668457"/>
+            <elem2D type="line" ex="0.954345703125" ey="1.9062937498092651"/>
+            <elem2D type="line" ex="0.95472532510757446" ey="1.9076589345932007"/>
+            <elem2D type="line" ex="0.95472216606140137" ey="1.9523566961288452"/>
+            <elem2D type="line" ex="0.92184567451477051" ey="1.9856325387954712"/>
+            <elem2D type="line" ex="0.92125755548477173" ey="1.9870520830154419"/>
+            <elem2D type="line" ex="0.92125755548477173" ey="2.2830653190612793"/>
+            <elem2D type="line" ex="0.84567850828170776" ey="2.3590438365936279"/>
+            <elem2D type="line" ex="0.84512895345687866" ey="2.3608551025390625"/>
+            <elem2D type="line" ex="0.8464544415473938" ey="2.3626036643981934"/>
+            <elem2D type="line" ex="0.8464544415473938" ey="2.8050787448883057"/>
+            <elem2D type="line" ex="0.84704256057739258" ey="2.8064985275268555"/>
+            <elem2D type="line" ex="0.84846234321594238" ey="2.807086706161499"/>
+            <elem2D type="line" ex="0.94054573774337769" ey="2.807086706161499"/>
+            <elem2D type="line" ex="0.944599449634552" ey="2.8107414245605469"/>
+            <elem2D type="line" ex="0.94488191604614258" ey="3.3706636428833008"/>
+            <elem2D type="line" ex="0.875588059425354" ey="3.4403567314147949"/>
+            <elem2D type="line" ex="0.875" ey="3.4417767524719238"/>
+            <elem2D type="line" ex="0.87503862380981445" ey="4.0531420707702637"/>
+            <elem2D type="line" ex="0.8797295093536377" ey="4.0641684532165527"/>
+            <elem2D type="line" ex="0.8911474347114563" ey="4.0688977241516113"/>
+            <elem2D type="line" ex="1.2113370895385742" ey="4.0688977241516113"/>
+            <elem2D type="line" ex="1.2269375324249268" ey="4.0720648765563965"/>
+            <elem2D type="line" ex="1.2394342422485352" ey="4.0804815292358398"/>
+            <elem2D type="line" ex="1.2477176189422607" ey="4.0927038192749023"/>
+            <elem2D type="line" ex="1.2509311437606812" ey="4.1079912185668945"/>
+            <elem2D type="line" ex="1.2509864568710327" ey="4.2428998947143555"/>
+            <elem2D type="line" ex="1.1441330909729004" ey="4.304926872253418"/>
+            <elem2D type="line" ex="1.1092915534973145" ey="4.3051180839538574"/>
+            <elem2D type="line" ex="1.1078717708587646" ey="4.3057060241699219"/>
+            <elem2D type="line" ex="1.1072837114334106" ey="4.3071260452270508"/>
+            <elem2D type="line" ex="1.1072837114334106" ey="4.4566535949707031"/>
+            <elem2D type="line" ex="1.1078717708587646" ey="4.4580731391906738"/>
+            <elem2D type="line" ex="1.1092915534973145" ey="4.4586615562438965"/>
+            <elem2D type="line" ex="1.1440362930297852" ey="4.4587969779968262"/>
+            <elem2D type="line" ex="1.2507573366165161" ey="4.5204124450683594"/>
+            <elem2D type="line" ex="1.2509844303131104" ey="4.7594432830810547"/>
+            <elem2D type="line" ex="1.2315127849578857" ey="4.7793140411376953"/>
+            <elem2D type="line" ex="0" ey="4.7795276641845703"/>
+          </cont2D>
+          <file type="stl">
+            Files_0.stl
+          </file>
+          <file type="cad">
+            Files_1.hmc
+          </file>
+          <mountingPosition location="machineSide">
+            <param name="origin" value="0,4.7795276641845703,0"/>
+            <param name="xAxis" value="1,0,0"/>
+            <param name="yAxis" value="0,0,-1"/>
+            <param name="zAxis" value="0,1,0"/>
+          </mountingPosition>
+          <mountingPosition location="workpieceSide">
+            <param name="origin" value="0,0,0"/>
+            <param name="xAxis" value="1,0,0"/>
+            <param name="yAxis" value="0,0,-1"/>
+            <param name="zAxis" value="0,1,0"/>
+          </mountingPosition>
+        </geometry>
+      </holder>
+    </holders>
+  </holders>
+  <tools>
+    <tools folder="Drills" objGuid="07a1b934-78d2-4c38-b2ba-6fafb61fef52">
+      <tools folder="Drills (Solid)" objGuid="e4b360d5-bddc-471a-bb6c-993839ca7b68">
+        <tools folder="HSS" objGuid="dbf99580-3c66-4f81-9ac9-e30844c191fa">
+          <tool type="drilTool" name="HSS Twist .246&quot;">
+            <param name="hmbState" value="unlinked"/>
+            <param name="objGuid" value="ef8eb5d1-74cb-419b-aef2-cac7445c6fb4"/>
+            <param name="cuttingMaterial" value="HSS"/>
+            <param name="lengthOfUnit" value="inch"/>
+            <param name="toolTotalLength" value="2.5"/>
+            <param name="spindleRotation" value="clockwise"/>
+            <coupling type="shank">
+              <param name="hmbState" value="unlinked"/>
+              <param name="objGuid" value="128848ad-1ede-4156-bf99-241183e56c9f"/>
+              <param name="minDia" value="0.246"/>
+              <param name="minLen" value="0"/>
+              <param name="maxLen" value="0"/>
+              <param name="lengthOfUnit" value="inch"/>
+            </coupling>
+            <param name="cuttingEdges" value="2"/>
+            <param name="cuttingLength" value="0.88"/>
+            <param name="toolShaftType" value="none"/>
+            <param name="toolDiameter" value="0.246"/>
+            <param name="taperHeight" value="2.5"/>
+            <tecsets>
+              <tecset type="milling">
+                <param name="lengthOfUnit" value="inch"/>
+                <param name="planeFeedrate" value="8"/>
+                <param name="coolants" value="1"/>
+                <param name="spindleSpeed" value="2000"/>
+                <param name="cuttingSpeed" value="10"/>
+                <param name="zFeedrate" value="2"/>
+                <param name="feedratePerEdge" value="0.02"/>
+                <param name="drillingFeedrate" value="0"/>
+                <param name="cuttingWidth" value="0"/>
+                <param name="cuttingLength" value="0"/>
+                <param name="maxRedFeedrateAngle" value="15"/>
+                <param name="plungeAngle" value="2"/>
+                <param name="reducedFeedrate" value="4"/>
+              </tecset>
+              <tecset type="milling">
+                <param name="material" value="Wrought aluminium alloys Si &lt; 6%"/>
+                <param name="purpose" value="Drilling"/>
+                <param name="lengthOfUnit" value="inch"/>
+                <param name="planeFeedrate" value="10"/>
+                <param name="coolants" value="1"/>
+                <param name="spindleSpeed" value="2972"/>
+                <param name="cuttingSpeed" value="200"/>
+                <param name="zFeedrate" value="10"/>
+                <param name="feedratePerEdge" value="0.0035"/>
+                <param name="drillingFeedrate" value="0"/>
+                <param name="cuttingWidth" value="0"/>
+                <param name="cuttingLength" value="0"/>
+                <param name="maxRedFeedrateAngle" value="15"/>
+                <param name="plungeAngle" value="2"/>
+                <param name="reducedFeedrate" value="5"/>
+              </tecset>
+              <tecset type="milling">
+                <param name="material" value="Steel 500 - 850 N/mm²  (Steel up to 24 HRC)"/>
+                <param name="purpose" value="Drilling"/>
+                <param name="lengthOfUnit" value="inch"/>
+                <param name="planeFeedrate" value="3.105462304232104"/>
+                <param name="coolants" value="1"/>
+                <param name="spindleSpeed" value="1552.731152116052"/>
+                <param name="cuttingSpeed" value="100"/>
+                <param name="zFeedrate" value="1.552731152116052"/>
+                <param name="feedratePerEdge" value="0.001"/>
+                <param name="drillingFeedrate" value="0.001"/>
+                <param name="cuttingWidth" value="0"/>
+                <param name="cuttingLength" value="0"/>
+                <param name="maxRedFeedrateAngle" value="15"/>
+                <param name="plungeAngle" value="2"/>
+                <param name="reducedFeedrate" value="2.173823612962473"/>
+                <param name="planeFeedrateFormula" value="fF"/>
+                <param name="zFeedrateFormula" value="fFDrill"/>
+                <param name="spindleSpeedFormula" value="fSinch"/>
+                <param name="reducedFeedrateFormula" value="fFreduced"/>
+              </tecset>
+              <tecset type="milling">
+                <param name="material" value="Stainless steel ferritic/martensitic"/>
+                <param name="purpose" value="High Efficiency Side Milling"/>
+                <param name="lengthOfUnit" value="inch"/>
+                <param name="planeFeedrate" value="3.105462304232104"/>
+                <param name="coolants" value="1"/>
+                <param name="spindleSpeed" value="1552.731152116052"/>
+                <param name="cuttingSpeed" value="100"/>
+                <param name="zFeedrate" value="1.552731152116052"/>
+                <param name="feedratePerEdge" value="0.001"/>
+                <param name="drillingFeedrate" value="0.001"/>
+                <param name="cuttingWidth" value="0"/>
+                <param name="cuttingLength" value="0"/>
+                <param name="maxRedFeedrateAngle" value="15"/>
+                <param name="plungeAngle" value="2"/>
+                <param name="reducedFeedrate" value="2.173823612962473"/>
+                <param name="planeFeedrateFormula" value="fF"/>
+                <param name="zFeedrateFormula" value="fFDrill"/>
+                <param name="spindleSpeedFormula" value="fSinch"/>
+                <param name="reducedFeedrateFormula" value="fFreduced"/>
+              </tecset>
+              <tecset type="milling">
+                <param name="material" value="Titanium alloys &gt; 300 HB [Ti6Al4V]"/>
+                <param name="purpose" value="High Efficiency Side Milling"/>
+                <param name="lengthOfUnit" value="inch"/>
+                <param name="planeFeedrate" value="3.105462304232104"/>
+                <param name="coolants" value="1"/>
+                <param name="spindleSpeed" value="1552.731152116052"/>
+                <param name="cuttingSpeed" value="100"/>
+                <param name="zFeedrate" value="1.552731152116052"/>
+                <param name="feedratePerEdge" value="0.001"/>
+                <param name="drillingFeedrate" value="0.001"/>
+                <param name="cuttingWidth" value="0"/>
+                <param name="cuttingLength" value="0"/>
+                <param name="maxRedFeedrateAngle" value="15"/>
+                <param name="plungeAngle" value="2"/>
+                <param name="reducedFeedrate" value="2.173823612962473"/>
+                <param name="planeFeedrateFormula" value="fF"/>
+                <param name="zFeedrateFormula" value="fFDrill"/>
+                <param name="spindleSpeedFormula" value="fSinch"/>
+                <param name="reducedFeedrateFormula" value="fFreduced"/>
+              </tecset>
+            </tecsets>
+            <param name="coneAngle" value="135"/>
+            <param name="centeringRequired" value="0"/>
+            <param name="noTipLength" value="2.449051731828109"/>
+            <param name="breakThroughLength" value="0"/>
+          </tool>
+        </tools>
+      </tools>
+    </tools>
+  </tools>
+  <ncTools>
+    <ncTools folder="Solid Drills" objGuid="361e01b2-a8a7-41ed-a682-09b3f947be51">
+      <ncTools folder="HSS Twist" objGuid="d5604499-975e-49bf-994a-34656da74d32">
+        <ncTool ncNumber="31" id=".246 Std Jobber HSS Drill" name="HSS Twist">
+          <param name="hmbState" value="unlinked"/>
+          <param name="comment" value="comment test"/>
+          <param name="objGuid" value="65d25020-e7ad-4a31-bb43-e099ef18926a"/>
+          <param name="lengthOfUnit" value="inch"/>
+          <param name="toolLength" value="0"/>
+          <param name="usableLength" value="0"/>
+          <param name="clearanceLength" value="1.25005155638933"/>
+          <param name="gageLength" value="6.02952766418457"/>
+          <param name="spindleSpeedFactor" value="1"/>
+          <param name="feedrateFactor" value="1"/>
+          <param name="cuttingWidthFactor" value="1"/>
+          <param name="cuttingLengthFactor" value="1"/>
+          <param name="maxSpindleSpeed" value="0"/>
+          <param name="maxFeedrate" value="0"/>
+          <param name="breakageCheck" value="0"/>
+          <components>
+            <component type="spindle" name="DVF6500" contour="Spindle_1"/>
+            <component type="holder" name="NCAT40-NPU13-105U-IDU" contour="NCAT40-NPU13-105U-IDU" reach="4.7795276641845703"/>
+            <component type="tool" name="HSS Twist .246&quot;" reach="1.25"/>
+          </components>
+          <cuttingProfiles>
+            <cuttingProfile type="milling">
+              <param name="enabled" value="1"/>
+            </cuttingProfile>
+            <cuttingProfile material="Wrought aluminium alloys Si &lt; 6%" purpose="Drilling" type="milling">
+              <param name="enabled" value="1"/>
+            </cuttingProfile>
+            <cuttingProfile material="Steel 500 - 850 N/mm²  (Steel up to 24 HRC)" purpose="Drilling" type="milling">
+              <param name="enabled" value="1"/>
+            </cuttingProfile>
+            <cuttingProfile material="Stainless steel ferritic/martensitic" purpose="High Efficiency Side Milling" type="milling">
+              <param name="enabled" value="1"/>
+            </cuttingProfile>
+            <cuttingProfile material="Titanium alloys &gt; 300 HB [Ti6Al4V]" purpose="High Efficiency Side Milling" type="milling">
+              <param name="enabled" value="1"/>
+            </cuttingProfile>
+          </cuttingProfiles>
+          <coupling type="isoAdaptor">
+            <param name="hmbState" value="unlinked"/>
+            <param name="objGuid" value="3619846f-bc46-4c91-b46e-983d7cfc4e3f"/>
+            <param name="class" value="CAT 40"/>
+            <param name="isoCode" value="SKG3*C0400$$$$"/>
+            <param name="lengthOfUnit" value="inch"/>
+          </coupling>
+        </ncTool>
+      </ncTools>
+    </ncTools>
+  </ncTools>
+</omtdx>
