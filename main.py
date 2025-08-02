@@ -3,15 +3,15 @@ import os
 import xml.etree.ElementTree as ET
 
 # --- CONFIGURATION ---
-excel_file = "input.xlsx"   # Your Excel file
+excel_file = "HSS drill mass upload.xlsx"   # Your Excel file
 output_folder = "xml_output"  # Folder to store XML files
-id_column = "Safe_Name"  # Column to use for file naming (can be None to use row index)
+id_column = "Name"  # Column to use for file naming (can be None to use row index)
 
 # Create output folder if it doesn't exist
 os.makedirs(output_folder, exist_ok=True)
 
-# Read Excel file
-df = pd.read_excel(excel_file)
+# Read Excel file but skip the first 7 rows
+df = pd.read_excel(excel_file, skiprows=7)
 
 # Loop through each row in the DataFrame
 for index, row in df.iterrows():
@@ -65,51 +65,44 @@ for index, row in df.iterrows():
     tools = ET.SubElement(root, "tools")
     tool = ET.SubElement(tools, "tool",attrib={"type":"drilTool", "name":"1"})
     param = ET.SubElement(tool, "param", attrib={"name":"comment", "value":f"{row.Comment}"})
-    param = ET.SubElement(tool, "param", attrib={"name":"orderingCode", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"manufacturer", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"cuttingMaterial", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"lengthOfUnit", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"toolTotalLength", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"cuttingEdges", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"cuttingLength", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftType", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftDiameter", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftChamferDefMode", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftChamferAbsPos", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"toolDiameter", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"taperHeight", "value":"unknown"})
-    param = ET.SubElement(tool, "param", attrib={"name":"coneAngle", "value":"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"orderingCode", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"manufacturer", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"cuttingMaterial", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"lengthOfUnit", "value":f"{row.overall_length_in}"})
+    param = ET.SubElement(tool, "param", attrib={"name":"toolTotalLength", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"cuttingEdges", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"cuttingLength", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftType", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftDiameter", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftChamferDefMode", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"toolShaftChamferAbsPos", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"toolDiameter", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"taperHeight", "value":f"unknown"})
+    param = ET.SubElement(tool, "param", attrib={"name":"coneAngle", "value":f"unknown"})
     tecsets = ET.SubElement(tool, "tecsets")
     tecset = ET.SubElement(tecsets,"tecset", attrib={"type":"milling"})
-    param = ET.SubElement(tecset,"param", attrib={"cuttingMaterial":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"material":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"purpose":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"lengthOfUnit":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"spindleSpeedFormula":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"cuttingSpeed":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"coolants":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"zFeedrateFormula":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"reducedFeedrateFormula":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"plungeAngle":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"maxRedFeedrateAngle":"Solid carbide"})
-    param = ET.SubElement(tecset,"param", attrib={"drillingFeedrate":"Solid carbide"})
-       
+    param = ET.SubElement(tecset,"param", attrib={"cuttingMaterial":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"material":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"purpose":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"lengthOfUnit":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"spindleSpeedFormula":"fS"})
+    param = ET.SubElement(tecset,"param", attrib={"cuttingSpeed":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"coolants":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"zFeedrateFormula":"fFDrill"})
+    param = ET.SubElement(tecset,"param", attrib={"reducedFeedrateFormula":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"plungeAngle":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"maxRedFeedrateAngle":f"unknown"})
+    param = ET.SubElement(tecset,"param", attrib={"drillingFeedrate":f"unknown"})
    
-    
-
-
-
-
-    # Add each column as a child element
-    #for col_name, value in row.items():
-    #    child = ET.SubElement(root, col_name)
-    #    child.text = "" if pd.isna(value) else str(value)
-    
-    # Build XML tree
+    # Build XML tree and format it
     tree = ET.ElementTree(root)
+    ET.indent(tree, space="\t", level=0)
     
-    # Write XML to file
+    # Write XML to file for this record
     output_path = os.path.join(output_folder, file_name)
+    output_path = output_path.replace('"',"in")
+    output_path = output_path.replace('”','in')
+    output_path = output_path.replace("/","_")
     tree.write(output_path, encoding="utf-8", xml_declaration=True)
 
 print(f"XML files created in: {output_folder}")
