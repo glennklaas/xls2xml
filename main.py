@@ -98,11 +98,12 @@ for index, row in df.iterrows():
     tree = ET.ElementTree(root)
     ET.indent(tree, space="\t", level=0)
     
-    # Write XML to file for this record
+    file_name = file_name.replace('"',"in")
+    file_name = file_name.replace('”','in')
+    file_name = file_name.replace("/","_")
+    
+     # Write XML to file for this record
     output_path = os.path.join(output_folder, file_name)
-    output_path = output_path.replace('"',"in")
-    output_path = output_path.replace('”','in')
-    output_path = output_path.replace("/","_")
     tree.write(output_path, encoding="utf-8", xml_declaration=True)
 
 print(f"XML files created in: {output_folder}")
