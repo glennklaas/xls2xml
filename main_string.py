@@ -23,9 +23,7 @@ for index, row in df.iterrows():
     else:
         file_name = f"row_{index+1}.xml"
 
-    #row.Name.replace("\"","&quot;")
-    #quoteEscapedName = row.Name
-    #df['Name'] = df['Name'].str.replace('\"', '&quot;')
+
     row.Name = row.Name.replace('”', '&quot;')
     row.Name = row.Name.replace('"', '&quot;')
 
@@ -211,15 +209,13 @@ for index, row in df.iterrows():
 </ncTools>
 
 </omtdx>
-    """
+"""
     
+    # Write XML to file for this record
     file_name = file_name.replace('"',"in")
     file_name = file_name.replace('”','in')
     file_name = file_name.replace("/","_")
-    
-     # Write XML to file for this record
     output_path = os.path.join(output_folder, file_name)
-    # Writing a string to a file
     with open(output_path, "w") as file:
         file.write(xml_string)
     
